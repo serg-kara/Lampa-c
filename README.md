@@ -1,15 +1,26 @@
-# Lampa-c
+# Lampa
 
-Lampa frontend with Lampac NextGen plugins integration.
+Приложение полностью бесплатное и использует публичные ссылки для просмотра информации о фильмах, новинках, популярных фильмов и т.д. Вся доступная информация используется исключительно в познавательных целях, приложение не использует свои собственные серверы для распространения информации.
 
-## Features
+Исходники лампы доступны тут: https://github.com/yumata/lampa-source
 
-- Latest Lampa UI from yumata/lampa
-- Support for lampainit.js from Lampac backend
-- Ready for GitHub Pages deployment
+#### Устройства
+* LG WebOS
+* Samsung Tizen
+* MSX
+* Android
+* MacOS
+* Windows
 
-## Deployment
+## Установка для MSX
 
-This project is automatically deployed to GitHub Pages on every push to the main branch.
+На данный момент ручная установка, вам необходим свой собственный хостинг или локальный веб-сервер. 
 
-Visit: https://serg-kara.github.io/Lampa-c/
+1. Тут же нажмите на зеленую кнопку (Code) и выберите (Download ZIP) загрузите файлы на хостинг или веб-сервер.
+2. Откройте файл `msx/start.json` и замените содержиое `{domain}` на свой домен или IP
+3. Откройте MSX и выполните установку
+
+## Запуск в Docker'е
+
+1. Соберите образ `docker build --build-arg domain={domain} -t lampa . `
+2. Запустите контейнер `docker run -p 8080:80 -d --restart unless-stopped -it --name lampa lampa`
